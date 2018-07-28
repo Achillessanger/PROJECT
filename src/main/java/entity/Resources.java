@@ -18,7 +18,7 @@ public class Resources {
             case 2:
                 number=c_number_content[1];
             case 1:
-                number=c_number_content[0];
+                c_id=c_number_content[0];
                 default:
                     break;
         }
