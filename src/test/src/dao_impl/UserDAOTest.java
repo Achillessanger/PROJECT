@@ -21,7 +21,7 @@ public class UserDAOTest {
     public void testInfoQuerySomethingSet() {
         UserDAO userDAO = DAOFactory.getUserDAOInstance();
         List<Map<String, String>> ret = userDAO.infoList(new User());
-        assertEquals(2, ret.size());
+        assertEquals(1, ret.size());
     }
 
     @Test
@@ -34,14 +34,14 @@ public class UserDAOTest {
     @Test
     public void testDelete() {
         UserDAO userDAO = DAOFactory.getUserDAOInstance();
-        int ret = userDAO.delete(6);
+        int ret = userDAO.delete(2);
         assertEquals(1, ret);
     }
 
     @Test
     public void testModify() {
         UserDAO userDAO = DAOFactory.getUserDAOInstance();
-        int ret = userDAO.modify(new User("5", "hypnus", "池妄", "matsuokahypnus@gmail.com", "123456789", "0"));
+        int ret = userDAO.modify(new User("4", "hypnus", "池妄", "matsuokahypnus@gmail.com", "123456789", "0"));
         assertEquals(1, ret);
     }
 }

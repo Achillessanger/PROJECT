@@ -15,17 +15,21 @@ public class CoursePage {
     private String number;
     @SQLString
     private String title;
+    @SQLString
+    private String link;
 
-    public CoursePage(String... id_c_number_title) {
-        switch (id_c_number_title.length) {
+    public CoursePage(String... id_c_number_title_link) {
+        switch (id_c_number_title_link.length) {
+            case 5:
+                link=id_c_number_title_link[4];
             case 4:
-                title=id_c_number_title[3];
+                title=id_c_number_title_link[3];
             case 3:
-                number=id_c_number_title[2];
+                number=id_c_number_title_link[2];
             case 2:
-                c_id=id_c_number_title[1];
+                c_id=id_c_number_title_link[1];
             case 1:
-                id=id_c_number_title[0];
+                id=id_c_number_title_link[0];
             default:
                 break;
         }
@@ -61,5 +65,13 @@ public class CoursePage {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }
